@@ -21,7 +21,7 @@
         <li><a class="nav-link" href="{{ route('roles.index') }}"><i class="fa fa-circle-o"></i>Manage Role</a></li>
         <li><a class="nav-link" href="{{ url('vertical') }}"><i class="fa fa-circle-o"></i>Vertical</a></li>
         <li><a class="nav-link" href="{{ url('category') }}"><i class="fa fa-circle-o"></i>Category</a></li>
-        <li><a class="nav-link" href="{{ url('services') }}"><i class="fa fa-circle-o"></i>Services</a></li>               
+        <li><a class="nav-link" href="{{ url('services') }}"><i class="fa fa-circle-o"></i>Subscription</a></li>               
         <li><a class="nav-link" href="{{ url('user_subscrbed_field') }}"><i class="fa fa-circle-o"></i>User Subscribes Field</a></li>               
       </ul>
     </section>

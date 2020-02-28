@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/D:/xampp/htdocs/banka_cfo/routes/web.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/app/Http/Controllers/UserSubscribedfield.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/resources/views/user_subscription_data/create.blade.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/resources/views/user_subscription_data/show_client_form.blade.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/app/Http/Controllers/ServiceController.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/app/Http/Controllers/SubscriptionController.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/resources/views/users/edit.blade.php</file>
+            <file>file:/D:/xampp/htdocs/banka_cfo/resources/views/user_subscription_data/services_list.blade.php</file>
+        </group>
     </open-files>
 </project-private>

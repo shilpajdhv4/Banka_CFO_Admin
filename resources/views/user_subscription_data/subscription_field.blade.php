@@ -6,7 +6,7 @@
 <section class="content-header">
     <div class="row">
         <div class="col-md-2">
-            <h3>Service List</h3>
+            <h3>Client List</h3>
         </div>
     </div>
 </section>
@@ -37,7 +37,7 @@
                         <td>{{$x++}}</td>
                         <td>{{$row->name}}</td>
                         <td width="280px">
-                            <a class="btn btn-primary" href="get_subscribeservices/{{$row->user_id}}">View</a>
+                            <a class="btn btn-primary" href="get_subscribeservices?id={{$row->user_id}}">View</a>
                         </td>
                     </tr>
                     @endforeach

@@ -125,14 +125,19 @@
                                                         </label>
                                                 </td>-->
                                                 <td>
-                                                    <input type="text" class="form-control recuring_yes" placeholder="Frequency" value="" name="parameter_field[1][]" id="parameter_textbox[1][]"   >
+                                                    <select class="form-control select2" style="width: 100%;" name="parameter_field[1][]" id="parameter_textbox[1]">
+                                                        <option value="Monthly">Monthly</option>
+                                                        <option value="Quarterly">Quarterly</option>
+                                                        <option value="Yearly">Yearly</option>
+                                                    </select>
+                                                    <!--<input type="text" class="form-control recuring_yes" placeholder="Frequency" value="" name="parameter_field[1][]" id="parameter_textbox[1][]"   >-->
                                                 </td>
                                                 <td >
                                                     <div class="input-group date recuring_yes" >
                                                            <div class="input-group-addon">
                                                             <i class="fa fa-calendar"></i>
                                                           </div>
-                                                        <input type="text" name="upload_date" id="upload_date" class="form-control datepicker" placeholder="DD-MM-YYYY" required  >
+                                                        <input type="text" name="upload_date" id="upload_date" class="form-control datepicker" placeholder="YYYY-MM-DD" required  >
                                                     </div>
                                                 </td>
                                             </tr>
@@ -225,14 +230,18 @@ $(document).ready(function () {
                 <option value="multiplefile">Multiple File</option></select></td>\n\
             <td><label><input type="checkbox" class="minimal" name="parameter_field['+i+'][]" ></label></td>\n\
             <td><input type="radio" name="parameter_field['+i+'][]" value="yes" /> Yes<input type="radio" name="parameter_field['+i+'][]" value="no" /> No</td>\n\
-            <td><input type="text" class="form-control" placeholder="Label Name" value="" name="parameter_field['+i+'][]" id="parameter_field['+i+'][]"   ></td>\n\
-            <td><div class="input-group date" ><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="text" name="parameter_field['+i+'][]" id="parameter_field['+i+'][]" class="form-control datepicker" placeholder="DD-MM-YYYY" required  ></div></td></tr>')
+            <td><select class="form-control select2" style="width: 100%;" name="parameter_field['+i+'][]" id="parameter_textbox['+i+']"><option value="Monthly">Monthly</option> <option value="Quarterly">Quarterly</option><option value="Yearly">Yearly</option></select></td>\n\
+            <td><div class="input-group date" ><div class="input-group-addon"><i class="fa fa-calendar"></i></div><input type="text" name="parameter_field['+i+'][]" id="parameter_field['+i+'][]" class="form-control datepicker" placeholder="YYYY-MM-DD" required  ></div></td></tr>')
                 $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
                     checkboxClass: 'icheckbox_minimal-blue',
                     radioClass   : 'iradio_minimal-blue'
                   })
             $('select').select2();
-            $('.datepicker-autoclose').datepicker();
+            $('.datepicker').datepicker({
+                format: "yyyy-mm-dd",
+                autoclose: true,
+                todayHighlight: true
+            })
         });
         j=2;
         $(document).on("change",".prod_drop",function(){

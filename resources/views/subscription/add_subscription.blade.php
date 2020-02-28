@@ -9,7 +9,7 @@
 }
 </style>
 <section class="content-header">
-    <h1>Subscription Details
+    <h1>Service Details
     <div class="pull-right">
         <a class="btn btn-primary" href="{{ url('subscription?id='.$_GET['id']) }}"> Back</a>
     </div></h1>

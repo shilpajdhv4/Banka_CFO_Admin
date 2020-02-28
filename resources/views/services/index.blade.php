@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 <section class="content-header">
     <div class="row">
-        <div class="col-md-2">
-            <h3>Service List</h3>
+        <div class="col-md-3">
+            <h3>Subscription List</h3>
         </div>
         <div class="col-md-3">
             <h4>Vertical Name : 
@@ -17,7 +17,7 @@
                                   ->where(['tbl_category.id'=>$_GET['id']])
                                   ->first(); echo $vertical->vertical_name; } ?> </h4>
         </div>
-        <div class="col-md-5">
+        <div class="col-md-3">
             <div class="form-group">
                 <label for="inputEmail3" class="col-sm-4 control-label">Categories</label>
                 <div class="col-sm-8">
@@ -30,10 +30,10 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-3">
             <div class="pull-right">
             <?php $id = ""; if(isset($_GET['id']))   $id = "?id=".$_GET['id']; ?>
-            <a class="btn btn-success" href="{{ url('add_service') }}"> Create New Service</a>
+            <a class="btn btn-success" href="{{ url('add_service') }}"> Create New Subscription</a>
             </div>
         </div>
     </div>
@@ -63,10 +63,10 @@
                         <th>#</th>
                         <!--<th>Vertical Name</th>-->
                         <!--<th>Category Name</th>-->
-                        <th>Service Name</th>
+                        <th>Subscription Name</th>
                         <th>Short Desc.</th>    
                         <th>Long Desc.</th>
-                        <th>Type Of Service</th>
+                        <th>Type Of Subscription</th>
                         <th>Image</th>
                         
                         <th>Action</th>
@@ -84,7 +84,7 @@
                         <td><img src="{{asset('service_img/'.$serv->upload_img)}}" style="width: 80px;height: 80px;"></td> 
                         <td width="280px">
                             <a class="btn btn-primary" href="{{url('edit_service?id='.$serv->id)}}">Edit</a>
-                            <a class="btn btn-primary" href="{{url('subscription?id='.$serv->id)}}">Subscription</a>
+                            <a class="btn btn-primary" href="{{url('subscription?id='.$serv->id)}}">Services</a>
                         </td>
                     </tr>
                     @endforeach

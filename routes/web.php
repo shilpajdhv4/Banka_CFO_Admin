@@ -54,4 +54,8 @@ Route::group(['middleware' => ['auth']], function() {
     Route::post('save_office_field','SubscriptionController@saveOfficeField');
     //User Subscribed field
     Route::get('user_subscrbed_field','UserSubscribedfield@showSubfield');
+    Route::get('get_subscribeservices','UserSubscribedfield@showServices');
+    Route::get('show_client_form','UserSubscribedfield@showClientForm');
+    Route::post('update_office_data','UserSubscribedfield@updateOfficefield');
+    
 });

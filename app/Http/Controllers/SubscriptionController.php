@@ -87,6 +87,7 @@ class SubscriptionController extends Controller
     public function editSubscription(){
         $id = $_GET['id'];
         $subscription = \App\Subscription::where(['id'=>$id])->first();
+//        echo "<pre/>";print_r($subscription);exit;
         return view('subscription.edit_subscription',['subscription'=>$subscription]);
     }
 
@@ -149,7 +150,7 @@ class SubscriptionController extends Controller
      //   echo "<pre>";print_r($requestData);exit;
         $id = $requestData['subscription_id'];
         foreach($requestData['parameter_field'] as $param){
-            $field_arr = array();
+            $field_arr = $arr = array();
             $field_arr['subscription_id'] = $id;
             $field_arr['field_title'] = @$param[0];
             $field_arr['field_type'] = @$param[1];
@@ -168,7 +169,18 @@ class SubscriptionController extends Controller
             }
             $field_arr['created_by'] = Auth::user()->id;
           //  echo "<pre>";print_r($field_arr);exit;
-            \App\SubscriptionField::create($field_arr);
+            $sub_data = \App\SubscriptionField::create($field_arr);
+            
+            $sub_client_field['subscription_id'] = $id;
+            $sub_client_field['field_id'] = $sub_data->id;
+            $sub_client_field['rec_month'] = 2;
+            $sub_client_field['rec_year'] = 2020;
+            $arr = array(@$param[0] => '');
+            $sub_client_field['field_input'] = json_encode($arr);
+            $sub_client_field['is_complete'] = 'No';
+            $sub_client_field['client_id'] = 1;
+            $sub_client_field['is_office_only'] = 0;
+            \App\SubscriptionsubclientField::create($sub_client_field);
         }
         return redirect('subscription?id='.$id);
       //  echo "<pre>";print_r($field_arr);exit;
@@ -205,7 +217,19 @@ class SubscriptionController extends Controller
             }
             $field_arr['created_by'] = Auth::user()->id;
             $field_arr['is_office_only'] = 1;
-            \App\SubscriptionField::create($field_arr);
+            
+            $sub_data = \App\SubscriptionField::create($field_arr);
+            
+            $sub_client_field['subscription_id'] = $id;
+            $sub_client_field['field_id'] = $sub_data->id;
+            $sub_client_field['rec_month'] = 2;
+            $sub_client_field['rec_year'] = 2020;
+            $arr = array(@$param[0] => '');
+            $sub_client_field['field_input'] = json_encode($arr);
+            $sub_client_field['is_complete'] = 'No';
+            $sub_client_field['client_id'] = 1;
+            $sub_client_field['is_office_only'] = 1;
+            \App\SubscriptionsubclientField::create($sub_client_field);
         }
         return redirect('subscription?id='.$id);
       //  echo "<pre>";print_r($field_arr);exit;

@@ -68,7 +68,7 @@
                         <td><img src="{{asset('category_img/'.$cat->upload_img)}}" style="width: 80px;height: 80px;"></td> 
                         <th width="280px">
                             <a class="btn btn-primary" href="{{url('edit_category?id='.$cat->id)}}">Edit</a>
-                            <a class="btn btn-primary" href="{{url('services?id='.$cat->id)}}">Services</a>
+                            <a class="btn btn-primary" href="{{url('services?id='.$cat->id)}}">Subscription</a>
                         </th>
                     </tr>
                     @endforeach

@@ -99,8 +99,9 @@
                                     </thead>
                                     <tbody id="h_lost">
                                         <?php $condition = json_decode($subscription->condition_package_wise,true); 
-                                       // echo "<pre>";print_r($condition);exit;
+//                                        echo "<pre>";print_r($condition);exit;
                                         $i = 0;
+                                        
                                         foreach($condition as $cond) {
                                         ?>
                                         <tr class="input_fields_wrap">
@@ -110,14 +111,14 @@
                                             <td class="parameter">
                                                 <label class="">
                                                 <div class="iradio_minimal-blue" aria-checked="false" aria-disabled="false" style="position: relative;">
-                                                    <input type="radio" name="parameter_detail[0][]" value="yes" class="minimal" style="position: absolute; opacity: 0;" <?php if($cond[1] == "yes") echo "checked"; ?>>
+                                                    <input type="radio" name="parameter_detail[0][]" value="yes" class="minimal" style="position: absolute; opacity: 0;" <?php if(isset($cond[1])) {if($cond[1] == "yes") echo "checked";} ?>>
                                                     <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                                                 </div>
                                                  Yes
                                               </label>
                                               <label class="">
                                                 <div class="iradio_minimal-blue " aria-checked="false" aria-disabled="false" style="position: relative;">
-                                                    <input type="radio" name="parameter_detail[0][]" value="no" class="minimal" style="position: absolute; opacity: 0;" <?php if($cond[1] == "no") echo "checked"; ?>>
+                                                    <input type="radio" name="parameter_detail[0][]" value="no" class="minimal" style="position: absolute; opacity: 0;" <?php if(isset($cond[1])) { if($cond[1] == "no") echo "checked"; } ?>>
                                                     <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins>
                                                 </div>
                                                  No

@@ -5,9 +5,9 @@
 <link rel="stylesheet" href="bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 <section class="content-header">
     <h1>
-        Subscription List
+        Service List
         <div class="pull-right">
-             <a class="btn btn-success" href="{{ url('add_subscription?id='.$id) }}"> Create New Subscription</a>
+             <a class="btn btn-success" href="{{ url('add_subscription?id='.$id) }}"> Create New Service</a>
         </div>
     </h1>
 </section>
@@ -20,7 +20,7 @@
             <h4>Category Name : {{$detail->category_name}}</h4>
         </div>
         <div class="col-md-6">
-            <h4>Service Name : {{$detail->service_name}}</h4>
+            <h4>Subscription  Name : {{$detail->service_name}}</h4>
         </div>
     </div>
    
